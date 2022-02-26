@@ -1,0 +1,79 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mpw.wearable.watch.mpwwatchface">
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="27" />
+    <uses-feature android:name="android.hardware.type.watch" />
+    <!-- Required to act as a custom watch face. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Required for complications to receive complication data and open the provider chooser. -->
+    <uses-permission android:name="com.google.android.wearable.permission.RECEIVE_COMPLICATION_DATA" />
+    <application
+        android:name=".MPWApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault">
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="false" />
+        <service
+            android:name=".watchface.MPWComplicationWatchFaceService"
+            android:enabled="true"
+            android:label="@string/digital_name"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/watch_face" />
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview"
+                android:resource="@drawable/ic_launcher_round" />
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview_circular"
+                android:resource="@drawable/ic_launcher_round" />
+            <meta-data
+                android:name="com.google.android.wearable.watchface.wearableConfigurationAction"
+                android:value="com.mpw.wearable.watch.mpwwatchface.CONFIG_COMPLICATION_SIMPLE" />
+
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+                <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE" />
+            </intent-filter>
+        </service>
+
+        <activity android:name="android.support.wearable.complications.ComplicationHelperActivity" />
+        <activity
+            android:name=".config.MPWComplicationConfigActivity"
+            android:label="@string/analog_complication_config">
+            <intent-filter>
+                <action android:name="com.mpw.wearable.watch.mpwwatchface.CONFIG_COMPLICATION_SIMPLE" />
+
+                <category android:name="com.google.android.wearable.watchface.category.WEARABLE_CONFIGURATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".provider.ComplicationToggleReceiver" />
+
+        <activity android:name=".config.ColorSelectionActivity" />
+        <activity android:name=".config.FontSelectionActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:icon="@drawable/mpw_launcher_icon"
+            android:label="MPWWatch App Launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

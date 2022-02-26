@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="digital_date">#aaaaaa</color>
+    <color name="digital_am_pm">#aaaaa0</color>
+    <color name="digital_colons">#aaaaa0</color>
+    <color name="config_activity_background">#ffffff</color>
+    <color name="config_activity_header_text_color">#959595</color>
+    <color name="color_item_label_color">#000000</color>
+    <color name="color_item_circle_border_color">#424242</color>
+
+
+    <!--colors-->
+    <color name="White">#FFFFFF</color>
+
+    <color name="Yellow">#FFEB3B</color>
+    <color name="Amber">#FFC107</color>
+    <color name="Orange">#FF9800</color>
+    <color name="Deep_Orange">#f53f05</color>
+
+    <color name="Red">#f71100</color>
+    <color name="Pink">#E91E63</color>
+
+    <color name="Purple">#9C27B0</color>
+    <color name="Deep_Purple">#673AB7</color>
+    <color name="Indigo">#3F51B5</color>
+    <color name="Blue">#2196F3</color>
+    <color name="Light_Blue">#44bbf1</color>
+
+    <color name="Cyan">#00BCD4</color>
+    <color name="Teal">#009688</color>
+    <color name="Green">#4CAF50</color>
+    <color name="Lime_Green">#8BC34A</color>
+    <color name="Lime">#CDDC39</color>
+
+    <color name="Blue_Grey">#607D8B</color>
+    <color name="Grey">#9E9E9E</color>
+    <color name="Brown">#795548</color>
+    <color name="Black">#000000</color>
+    <!--colors-->
+</resources>
